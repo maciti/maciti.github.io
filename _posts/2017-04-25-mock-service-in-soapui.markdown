@@ -3,7 +3,7 @@ layout: default
 title:  "Mock Service in SoapUi"
 date:   2017-04-25 19:55:01 +0100
 categories: SOA
-description: "SoapUI provides a feature to create mock services. Suppose you have to integrate your application with..."
+description: "SoapUI provides a feature to create mock services. Suppose you have to integrate your application with a third party service based on a WSDL. Maybe, for some reasons, you don’t want to call the real service,  or the real service is still under development..."
 ---
 # [](#header-1)Mock Service in SoapUI
 
