@@ -4,9 +4,12 @@ layout: default
 
 <div class="home">
 
-<img src="/assets/botanic.jpg" alt="botanic garden">
+
 
   <h1 class="page-heading">My Posts</h1>
+  <p>
+  <img src="/assets/botanic.jpg" alt="botanic garden">
+  </p>
   
   {{ content }}
 
@@ -19,6 +22,7 @@ layout: default
         <h2>
           <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         </h2>
+		<span>{{ post.description }}</span>
       </li>
     {% endfor %}
   </ul>
