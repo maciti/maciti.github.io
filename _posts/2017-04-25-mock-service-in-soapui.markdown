@@ -36,23 +36,23 @@ public class StockItemService : System.Web.Services.WebService {
 So we retrieve or we get provided with the WSDL. 
 In SoapUI we create a new SoapUI project importing the WSDL.
  
-![My helpful screenshot]({{ site.url }}/assets/soapui/SoapUI1.png)
+![soapui project screenshot]({{ site.url }}/assets/soapui/SoapUI1.png)
 
 Then SoapUI will create automatically the interfaces  for the real service.
 
-![My helpful screenshot]({{ site.url }}/assets/soapui/SoapUI2.png)
+![soapui project screenshot 2]({{ site.url }}/assets/soapui/SoapUI2.png)
 
 ## [](#header-3) Generate mock service
 
 Now, in order to create a mock service,right click on the interface and click on “generate mock service”
 
-![My helpful screenshot]({{ site.url }}/assets/soapui/SoapUI3.png)
+![mock service screenshot]({{ site.url }}/assets/soapui/SoapUI3.png)
 
 Now, we can create the responses for the specific service methods:
 
-![My helpful screenshot]({{ site.url }}/assets/soapui/soapUI5.png)
+![mock response screenshot]({{ site.url }}/assets/soapui/soapUI5.png)
 
-![My helpful screenshot]({{ site.url }}/assets/soapui/soapUI6.png)
+![mock response screenshot 2]({{ site.url }}/assets/soapui/soapUI6.png)
 
 ## [](#header-3) Rout the request to the desired response
 
@@ -64,7 +64,7 @@ Double click on the service method, as a dispatch method we select “script”.
 
 To run the script click on green arrow 
 
-![My helpful screenshot]({{ site.url }}/assets/soapui/soapui7.png)
+![My helpful script screenshot]({{ site.url }}/assets/soapui/soapui7.png)
 
 {% highlight ruby %}
 
