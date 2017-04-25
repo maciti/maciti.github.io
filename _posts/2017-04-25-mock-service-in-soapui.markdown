@@ -12,9 +12,11 @@ SoapUI, with the mock service feature, allows you to create a fake service that 
 
 ## [](#example)Simple Example
 
+## [](#web service) Web Service
+
 Let’s suppose we have to call a web service dedicated to retrieve stock item information such as the availability of a product in the storehouse and, unfortunately, the service is still under development.
 
-{% highlight c# %}
+{% highlight csharp %}
 
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -30,3 +32,23 @@ public class StockItemService : System.Web.Services.WebService {
 }
 
 {% endhighlight %}
+
+## [](#new project) new SoapUI project
+
+So we retrieve or we get provided with the WSDL. 
+In SoapUI we create a new SoapUI project importing the WSDL.
+ 
+![My helpful screenshot]({{ site.url }}/assets/SoapUI1.png)
+
+Then SoapUI will create automatically the interfaces  for the real service.
+
+![My helpful screenshot]({{ site.url }}/assets/SoapUI2.png)
+
+## [](#new project) Generate mock service
+
+Now, in order to create a mock service,right click on the interface and click on “generate mock service”
+
+![My helpful screenshot]({{ site.url }}/assets/SoapUI3.png)
+
+Now, we can create the responses for the specific service methods:
+
