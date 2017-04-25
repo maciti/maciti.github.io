@@ -55,7 +55,7 @@ Now, we can create the responses for the specific service methods:
 
 ![mock response screenshot 2]({{ site.url }}/assets/soapui/soapUI6.png)
 
-## [](#header-3) Rout the request to the desired response
+## [](#header-3) Route the request to the desired response
 
 The last thing we need to do is to dinamically rout the request to the desired response.
 
