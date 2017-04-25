@@ -12,7 +12,7 @@ SoapUI, with the mock service feature, allows you to create a fake service that 
 
 ## [](#header-2)Simple Example
 
-### [](#header-3) Web Service
+## [](#header-3) Web Service
 
 Let’s suppose we have to call a web service dedicated to retrieve stock item information such as the availability of a product in the storehouse and, unfortunately, the service is still under development.
 
@@ -33,7 +33,7 @@ public class StockItemService : System.Web.Services.WebService {
 
 {% endhighlight %}
 
-### [](#header-3) new SoapUI project
+## [](#header-3) new SoapUI project
 
 So we retrieve or we get provided with the WSDL. 
 In SoapUI we create a new SoapUI project importing the WSDL.
@@ -44,7 +44,7 @@ Then SoapUI will create automatically the interfaces  for the real service.
 
 ![My helpful screenshot]({{ site.url }}/assets/soapui/SoapUI2.png)
 
-### [](#header-3) Generate mock service
+## [](#header-3) Generate mock service
 
 Now, in order to create a mock service,right click on the interface and click on “generate mock service”
 
@@ -52,11 +52,11 @@ Now, in order to create a mock service,right click on the interface and click on
 
 Now, we can create the responses for the specific service methods:
 
-![My helpful screenshot]({{ site.url }}/assets/soapui/SoapUI5.png)
+![My helpful screenshot]({{ site.url }}/assets/soapui/soapUI5.png)
 
-![My helpful screenshot]({{ site.url }}/assets/soapui/SoapUI6.png)
+![My helpful screenshot]({{ site.url }}/assets/soapui/soapUI6.png)
 
-### [](#header-3) Rout the request to the desired response
+## [](#header-3) Rout the request to the desired response
 
 The last thing we need to do is to dinamically rout the request to the desired response.
 
@@ -66,7 +66,7 @@ Double click on the service method, as a dispatch method we select “script”.
 
 To run the script click on green arrow 
 
-![My helpful screenshot]({{ site.url }}/assets/soapui/SoapUI7.png)
+![My helpful screenshot]({{ site.url }}/assets/soapui/soapUI7.png)
 
 {% highlight ruby %}
 
@@ -86,7 +86,7 @@ else if(itemCode == "000002")
 
 {% endhighlight %}
 
-### [](#header-3) Test it!
+## [](#header-3) Test it!
 
 Start the mock service: double click on the service and click on the start arrow
 
