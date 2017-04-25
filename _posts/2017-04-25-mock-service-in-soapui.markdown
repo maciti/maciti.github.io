@@ -4,22 +4,29 @@ title:  "Mock Service in SoapUi"
 date:   2017-04-23 19:55:01 +0100
 categories: SOA
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+# [](#mock service)Mock Service in SoapUI
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+SoapUI provides a feature to create mock services. Suppose you have to integrate your application with a third party service based on a WSDL. Maybe, for some reasons, you don’t want to call the real service,  or the real service is still under development. 
 
-Jekyll also offers powerful support for code snippets:
+SoapUI, with the mock service feature, allows you to create a fake service that simulates the real one.
+
+## [](#example)Simple Example
+
+Let’s suppose we have to call a web service dedicated to retrieve stock item information such as the availability of a product in the storehouse and, unfortunately, the service is still under development.
 
 {% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
+
+[WebService(Namespace = "http://tempuri.org/")]
+[WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
+public class StockItemService : System.Web.Services.WebService {
+
+    public StockItemService () { }
+
+    [WebMethod]
+    public AvailabilityInfo GetAvailability(string itemCode) {
+
+        throw new NotImplementedException();
+    }  
+}
+
 {% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
