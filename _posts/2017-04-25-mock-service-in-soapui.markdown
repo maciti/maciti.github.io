@@ -10,8 +10,6 @@ SoapUI provides a feature to create mock services. Suppose you have to integrate
 
 SoapUI, with the mock service feature, allows you to create a fake service that simulates the real one.
 
-## [](#header-2)Simple Example
-
 ## [](#header-3) Web Service
 
 Let’s suppose we have to call a web service dedicated to retrieve stock item information such as the availability of a product in the storehouse and, unfortunately, the service is still under development.
@@ -66,7 +64,7 @@ Double click on the service method, as a dispatch method we select “script”.
 
 To run the script click on green arrow 
 
-![My helpful screenshot]({{ site.url }}/assets/soapui/soapUI7.png)
+![My helpful screenshot]({{ site.url }}/assets/soapui/soapui7.png)
 
 {% highlight ruby %}
 
