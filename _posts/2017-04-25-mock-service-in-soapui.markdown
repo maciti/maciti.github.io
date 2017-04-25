@@ -14,7 +14,7 @@ SoapUI, with the mock service feature, allows you to create a fake service that 
 
 Let’s suppose we have to call a web service dedicated to retrieve stock item information such as the availability of a product in the storehouse and, unfortunately, the service is still under development.
 
-{% highlight ruby %}
+{% highlight c# %}
 
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
