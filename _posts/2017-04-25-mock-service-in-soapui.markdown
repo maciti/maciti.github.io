@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title:  "Mock Service in SoapUi"
 date:   2017-04-23 19:55:01 +0100
 categories: SOA
