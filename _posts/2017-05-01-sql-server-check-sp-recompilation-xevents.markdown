@@ -18,21 +18,21 @@ Using Sql Server Management Studio 2016 I created a new session using the sessio
 
 ![xevents screenshot1]({{ site.url }}/assets/SqlRecompilation/sessionwizard.jpg)
 
-![xevents screenshot2]({{ site.url }}/assets/SqlRecompilation/xevents1.png)
+![xevents screenshot2]({{ site.url }}/assets/SqlRecompilation/xevents1.PNG)
 
 I didn't want a pre-built template..
 
-![xevents screenshot3]({{ site.url }}/assets/SqlRecompilation/xevents2.png)
+![xevents screenshot3]({{ site.url }}/assets/SqlRecompilation/xevents2.PNG)
 
 I added the sql_statement_recompile event..
 
-![xevents screenshot4]({{ site.url }}/assets/SqlRecompilation/xevents3.png)
+![xevents screenshot4]({{ site.url }}/assets/SqlRecompilation/xevents3.PNG)
 
 Here you can see that the wizard states that "sql_statement_recompile occurs when a statement-level recompilation is required by any kind of batch. This includes stored procedures, triggers, ad hoc batches and queries. Batches may be submitted through several interfaces, including sp_executesql, dynamic SQL, Prepare methods or Execute methods"
 
 ..and using the next form all the global params I wanted to capture
 
-![xevents screenshot5]({{ site.url }}/assets/SqlRecompilation/xevents4.png)
+![xevents screenshot5]({{ site.url }}/assets/SqlRecompilation/xevents4.PNG)
 
 I skipped all the remaining forms (I didn't need filters and I didn't want to save the data locally)
 
