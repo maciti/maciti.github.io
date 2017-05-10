@@ -2,7 +2,7 @@
 layout: default
 comments: true
 title:  "Troubleshoot SQL Server performance issues"
-date:   2017-05-06 19:55:01 +0100
+date:   2017-05-13 19:55:01 +0100
 categories: SQL
 description: "I wanted to write a reminder for myself on things to do in order to troubleshoot sql server performance issues..."
 ---
