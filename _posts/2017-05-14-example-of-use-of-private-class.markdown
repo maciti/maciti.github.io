@@ -3,12 +3,12 @@ layout: default
 comments: true
 title:  "Mock Service in SoapUi"
 date:   2017-04-25 19:55:01 +0100
-categories: C#
-description: "A simple example of use of a private class in c#"
+categories: C-sharp
+description: "A simple example of use of a private class in c-sharp"
 ---
-# [](#header-1)Private class example C#
+# [](#header-1)Private class example C-sharp
 
-A simple example of use of a private class in c#
+A simple example of use of a private class in c-sharp
 
 {% highlight csharp %}
 
@@ -50,7 +50,7 @@ A simple example of use of a private class in c#
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
 var disqus_config = function () {
-this.page.url = 'https://maciti.github.io/c#/2017/05/14/example-of-use-of-private-class.html';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.url = 'https://maciti.github.io/c-sharp/2017/05/14/example-of-use-of-private-class.html';  // Replace PAGE_URL with your page's canonical URL variable
 this.page.identifier = '2017-05-14-example-of-use-of-private-class'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 
