@@ -3,7 +3,7 @@ layout: default
 comments: true
 title:  "A simple example of use of a private class in c-sharp"
 date:   2017-05-14 19:55:01 +0100
-categories: C-sharp
+categories: c-sharp
 description: "A simple example of use of a private class in c-sharp"
 ---
 # [](#header-1)Private class example C-sharp
@@ -41,6 +41,8 @@ A simple example of use of a private class in c-sharp
 
 {% endhighlight %}
 
+
+{% if page.comments %}
 
 <div id="disqus_thread"></div>
 <script>
