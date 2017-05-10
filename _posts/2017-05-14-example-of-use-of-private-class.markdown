@@ -1,8 +1,8 @@
 ---
 layout: default
 comments: true
-title:  "Mock Service in SoapUi"
-date:   2017-04-25 19:55:01 +0100
+title:  "A simple example of use of a private class in c-sharp"
+date:   2017-05-14 19:55:01 +0100
 categories: C-sharp
 description: "A simple example of use of a private class in c-sharp"
 ---
