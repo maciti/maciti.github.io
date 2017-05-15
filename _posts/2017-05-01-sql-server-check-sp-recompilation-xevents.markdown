@@ -98,8 +98,8 @@ I also tried to replace the temp table with a table variable, as expected the re
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
 var disqus_config = function () {
-this.page.url = 'https://maciti.github.io/sql/2017/05/01/sql-server-check-sp-recompilation-xevents.html';  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = '2017-05-01-sql-server-check-sp-recompilation-xevents'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      this.page.url = '{{ page.url | absolute_url }}';
+      this.page.identifier = '{{ page.url | absolute_url }}';
 };
 
 (function() { // DON'T EDIT BELOW THIS LINE
