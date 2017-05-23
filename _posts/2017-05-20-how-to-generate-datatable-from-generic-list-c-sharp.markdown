@@ -1,10 +1,10 @@
 ---
 layout: default
 comments: true
-title:  "How to generate datatable from generic list in C# using reflection and extension methods..and vice versa"
+title:  "How to generate datatable from generic list in C#"
 date:   2017-05-20 19:55:01 +0100
 categories: c-sharp
-description: "I wanted to add an extension method to a generic list to convert it into a datatable.."
+description: "How to generate datatable from generic list in C# using reflection and extension methods..and vice versa"
 ---
 # [](#header-1)How to generate datatable from generic list (C sharp)
 
