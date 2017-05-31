@@ -54,10 +54,10 @@ How to subscribe? (lambda syntax)
 
 {% highlight csharp %}
 
-		TicketSeller t = new TicketSeller();
+	TicketSeller t = new TicketSeller();
 
         //lambda subscription
-        t.OnSale += () => Console.WriteLine("Tickets are on sale now");
+    t.OnSale += () => Console.WriteLine("Tickets are on sale now");
 
 {% endhighlight %}
 
@@ -66,17 +66,17 @@ or using other different syntaxes
 
 {% highlight csharp %}
 
-            //classic subscription
-            t.OnSale += TicketsAreOnSale;
+    //classic subscription
+    t.OnSale += TicketsAreOnSale;
 
-            //or..
-            t.OnSale += new SaleStatusHandler(TicketsAreOnSale);
+    //or..
+    t.OnSale += new SaleStatusHandler(TicketsAreOnSale);
 			
 			
-			public static void TicketsAreOnSale()
-			{
-				Console.WriteLine("------ tickets are on sale ------");
-			}
+	public static void TicketsAreOnSale()
+	{
+		Console.WriteLine("------ tickets are on sale ------");
+	}
 
 {% endhighlight %}
 

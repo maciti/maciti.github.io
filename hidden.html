@@ -1,0 +1,49 @@
+<body>
+<h3>Delegates</h3>
+
+<code>
+
+	public delegate void ProgressReporter(int percentage);
+
+    public class Worker
+    {
+        //delegate: a pointer to a function
+        public static void CompleteTask(ProgressReporter reporter)
+        {
+            for(int i = 0; i < 10; i++)
+            {
+                reporter(i * 10);
+
+                Thread.Sleep(1000); //simulate work
+            }
+        }
+    }
+</code>
+
+in main..
+
+<code>
+
+ProgressReporter p = WriteProgressToConsole;
+
+p += WriteProgressToFile;
+
+Monitor.CompleteTask(p)
+
+....
+
+public static void WriteProgressToConsole(int i)
+{
+    Console.WriteLine(i + " % completed");
+}
+
+public static void WriteProgressToFile(int i)
+{
+            //todo
+    Console.WriteLine("writing to file");
+}
+
+</code>
+
+
+<body>
