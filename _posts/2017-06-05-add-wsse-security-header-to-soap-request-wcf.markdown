@@ -14,6 +14,8 @@ Unfortunately WS-Security/WSE protocol is not natively supported in .NET WCF.
 
 WSS incorporates security features in the header of a SOAP message. Inside the header of a SOAP message, WSS has a security element (one or more than one) used to verify the end-user identity. Example:
 
+{% highlight xml %}
+
 <soap:Envelope>
  <soap:Header>	     
   <wsse:Security>
@@ -23,6 +25,7 @@ WSS incorporates security features in the header of a SOAP message. Inside the h
    </wsse:UsernameToken>
   </wsse:Security>
 
+{% endhighlight %}
 
 In order to allow your WCF client application to communicate with a WSS service a possible solution could be the following:
 
