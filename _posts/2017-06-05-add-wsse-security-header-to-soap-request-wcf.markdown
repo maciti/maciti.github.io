@@ -29,13 +29,9 @@ WSS incorporates security features in the header of a SOAP message. Inside the h
 
 In order to allow your WCF client application to communicate with a WSS service a possible solution could be the following:
 
-Capture the raw soap message before it gets submitted:
+1. Capture the raw soap message before it gets submitted: <a href="http://mbsguru.blogspot.ie/2012/11/capturing-and-using-raw-soap-messages.html"> capture raw soap messages</a> 
 
-you can follow the following post:
-
-<a href="http://mbsguru.blogspot.ie/2012/11/capturing-and-using-raw-soap-messages.html">capture raw soap messages</a> 
-
-implement BeforeSendRequest method in CapturingMessageInspector class (the following code is going to modify the soap message injecting the wss security header):
+2. Implement BeforeSendRequest method in CapturingMessageInspector class (the following code is going to modify the soap message injecting the wss security header):
 
 {% highlight csharp %}
 
