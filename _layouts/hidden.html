@@ -49,4 +49,46 @@ public static void WriteProgressToFile(int i)
 </code>
 </pre>
 
+<h3>Canceling Tasks with CancellationTokenSource</h3>
+<pre>
+<code>
+var cts = new CancellationTokenSource();
+
+Task<bool> task = Task.Run(() => {
+
+    while (!cts.Token.IsCancellationRequested) {
+
+        Console.WriteLine("doing some work..");
+        Thread.Sleep(1000);
+        }
+
+        throw new OperationCanceledException();
+
+        }, cts.Token).ContinueWith((t) => { 
+		
+			Console.WriteLine("doing other stuff.."); 
+			
+			return true; }, TaskContinuationOptions.OnlyOnCanceled
+			
+		);
+
+Thread.Sleep(3000);
+
+cts.Cancel();
+
+var resul = task.Result;
+
+Console.ReadLine();
+</code>
+</pre>
+<p>When the cts.Cancel() is invoked OperationCanceledException() is raised by the first task and the execution proceeds with the second.</p>
+<p>Output is "doing some work.." 3 times (3 seconds) plus "doing other stuff.."</p>
+<pre>
+<code>
+doing some work..
+doing some work..
+doing some work..
+doing other stuff..
+</code>
+</pre>
 <body>
