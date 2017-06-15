@@ -10,11 +10,9 @@ description: "Since .net 4.5 the CLR can call any method asynchronously in an au
 
 Since .net 4.5 the CLR can call any method asynchronously in an automatic way, this is a simple example to show how to use it 
 
-Unfortunately WS-Security/WSE protocol is not natively supported in .NET WCF.
-
 In the following I'm trying to simulate a real-life example where a job has to complete a task asynchronously, like sending an email, but has to continue with his execution while the process of sending the email is running. 
 
-{% highlight c-sharp %}
+{% highlight csharp %}
 
     class Program
     {
@@ -54,7 +52,7 @@ In the following I'm trying to simulate a real-life example where a job has to c
 
 The execution of it is going to print the following:
 
-![asynch screenshot]({{ site.url }}/assets/asynch/asynchResult.PNG)
+![asynch screenshot]({{ site.url }}/assets/Asynch/asynchResult.PNG)
 
 {% if page.comments %}
 
