@@ -2,7 +2,7 @@
 layout: default
 comments: true
 title:  "Set up your Continuous Integration Locally"
-date:   2017-05-11 19:55:01 +0100
+date:   2017-11-05 19:55:01 +0100
 categories: WCF
 description: "A simple guide on how to install everything locally to get familiar with continuos integration"
 ---
@@ -16,15 +16,15 @@ I decided to install all this tools on a virtual machine running Windows Server 
 
 As a git repo server I decided to try Go Git Service (Gogs https://gogs.io/). 
 
-How to install gogs:
+<b>How to install gogs:</b>
 
-1) Install Git https://git-scm.com/download/win
+<b>1)</b> Install Git <a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a>
 
-2) Install mysql server (I installed the 5.7 version) https://www.mysql.com/downloads/
+<b>2)</b> Install mysql server (I installed the 5.7 version) <a href="https://www.mysql.com/downloads/">https://www.mysql.com/downloads/<a>
 
-2a) In order to install mysql you need to install Install Visual C++ Redistributable Packages for VS 2013 https://www.microsoft.com/en-ie/download/details.aspx?id=40784 (this is required by mysql)
+<b>2a)</b> In order to install mysql you need to install Install Visual C++ Redistributable Packages for VS 2013 <a href="https://www.microsoft.com/en-ie/download/details.aspx?id=40784">link<a> (this is required by mysql)
 
-2b) NOTE: If the installation fails you need to install the following update https://support.microsoft.com/en-ie/help/3179560/update-for-visual-c-2013-and-visual-c-redistributable-package
+<b>2b)</b> NOTE: If the installation fails you need to install the following update <a href="https://support.microsoft.com/en-ie/help/3179560/update-for-visual-c-2013-and-visual-c-redistributable-package">link</a>
 
 Once mySQL is installed you need to create a database named gogs
 
@@ -32,21 +32,32 @@ Once mySQL is installed you need to create a database named gogs
 
 ![mysql screenshot]({{ site.url }}/assets/CI/CaptureMySql1.PNG)
 
-3) Install gogs: download the binary: https://gogs.io/docs/installation/install_from_binary, unzip it and run it  
+<b>3)</b> Install gogs: download the binary: https://gogs.io/docs/installation/install_from_binary, unzip it and run it  
 
 ![gogs screenshot]({{ site.url }}/assets/CI/gogs.PNG)
 
-4) navigate to 127.0.0.1:3000, insert your mysql password and click install
+<b>4)</b> navigate to 127.0.0.1:3000, insert your mysql password and click install
 
 ![gogs screenshot]({{ site.url }}/assets/CI/install.PNG)
 
-5) create an account and create your first repo
+<b>5)</b> create an account and create your first repo
 
 ![gogs screenshot]({{ site.url }}/assets/CI/account.PNG)
 
-![gogs screenshot]({{ site.url }}/assets/CI/repo.PNG)
+![gogs screenshot]({{ site.url }}/assets/CI/hello.PNG)
 
-## [](#header-3) Virtual Box Settings
+## [](#header-3) Virtual Machine Settings
+
+If you have installed gogs on your remote server or in a virtual machine you need to create an inbound rule for gogs in your server/vm firewall
+
+1)run wf.msc
+
+2)create inbound rule: allow TCP connection on port 3000
+
+![gogs screenshot]({{ site.url }}/assets/CI/tcp.PNG)
+
+...TO BE COMPLETED..
+
 
 {% if page.comments %}
 
