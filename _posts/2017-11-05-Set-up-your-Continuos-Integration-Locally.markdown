@@ -30,9 +30,9 @@ Once mySQL is installed you need to create a database named gogs
 
 ![mysql screenshot]({{ site.url }}/assets/CI/CaptureMySql1.PNG)
 
-![mysql screenshot]({{ site.url }}/assets/CI/CaptureMySql1.PNG)
+![mysql screenshot]({{ site.url }}/assets/CI/CaptureMySql2.PNG)
 
-<b>3)</b> Install gogs: download the binary: https://gogs.io/docs/installation/install_from_binary, unzip it and run it  
+<b>3)</b> Install gogs: download the binary: <a href="https://gogs.io/docs/installation/install_from_binary">https://gogs.io/docs/installation/install_from_binary</a>, unzip it and run it  
 
 ![gogs screenshot]({{ site.url }}/assets/CI/gogs.PNG)
 
@@ -46,9 +46,11 @@ Once mySQL is installed you need to create a database named gogs
 
 ![gogs screenshot]({{ site.url }}/assets/CI/hello.PNG)
 
+<b>Now GOGS is up and running!!!</b>
+
 ## [](#header-3) Virtual Machine Settings
 
-If you have installed gogs on your remote server or in a virtual machine you need to create an inbound rule for gogs in your server/vm firewall
+If you have installed gogs on your remote server or in a virtual machine you need to create an inbound rule for gogs in your server/vm firewall to be able to navigate to the gogs repo from your client.
 
 1)run wf.msc
 
@@ -56,8 +58,21 @@ If you have installed gogs on your remote server or in a virtual machine you nee
 
 ![gogs screenshot]({{ site.url }}/assets/CI/tcp.PNG)
 
-...TO BE COMPLETED..
+3) from your client machine check if you are connected: http://server-ip:3000
 
+If you are using virtual box you need to set up a couple of things first:
+
+1) go to file > preferences > network > host only network > add new one  and insert the following values
+
+![gogs screenshot]({{ site.url }}/assets/CI/vb1.PNG)
+
+![gogs screenshot]({{ site.url }}/assets/CI/vb2.PNG)
+
+2)on your VM settings, navigate to network and select host only adapted and the name of the adapter just created
+
+![gogs screenshot]({{ site.url }}/assets/CI/vb3.PNG)
+
+from your guest machine run ipconfig to determine the ip address, now from your host machine you should be able to access to the gogs repo http://guest-machine-ip:3000
 
 {% if page.comments %}
 
