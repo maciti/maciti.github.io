@@ -48,7 +48,7 @@ Once mySQL is installed you need to create a database named gogs
 
 <b>Now GOGS is up and running!!!</b>
 
-## [](#header-3) Virtual Machine Settings
+## [](#header-3) Machine Settings
 
 If you have installed gogs on your remote server or in a virtual machine you need to create an inbound rule for gogs in your server/vm firewall to be able to navigate to the gogs repo from your client.
 
@@ -60,19 +60,21 @@ If you have installed gogs on your remote server or in a virtual machine you nee
 
 3) from your client machine check if you are connected: http://server-ip:3000
 
-If you are using virtual box you need to set up a couple of things first:
+<b> NOTE: If you are using virtual box you need to set up a couple of things first: </b>
 
-1) go to file > preferences > network > host only network > add new one  and insert the following values
+<b>1)</b> go to file > preferences > network > host only network > add new one  and insert the following values
 
 ![gogs screenshot]({{ site.url }}/assets/CI/vb1.PNG)
 
 ![gogs screenshot]({{ site.url }}/assets/CI/vb2.PNG)
 
-2)on your VM settings, navigate to network and select host only adapted and the name of the adapter just created
+<b>2)</b>on your VM settings, navigate to network and select host only adapted and the name of the adapter just created
 
 ![gogs screenshot]({{ site.url }}/assets/CI/vb3.PNG)
 
 from your guest machine run ipconfig to determine the ip address, now from your host machine you should be able to access to the gogs repo http://guest-machine-ip:3000
+
+<b>now you should be able to clone your first repo locally, add a new file and push it!</b>
 
 {% if page.comments %}
 
