@@ -74,7 +74,18 @@ If you have installed gogs on your remote server or in a virtual machine you nee
 
 from your guest machine run ipconfig to determine the ip address, now from your host machine you should be able to access to the gogs repo http://guest-machine-ip:3000
 
-<b>now you should be able to clone your first repo locally, add a new file and push it!</b>
+## [](#header-3) Test the Repo
+
+Clone your first repo http://server-ip:3000/{user}/{your-first-repo}.git
+
+Add a new file locally and push it into the server
+
+Create a new branch from master and push it..
+
+![gogs screenshot]({{ site.url }}/assets/CI/xyz.PNG)
+
+TO BE COMPLETED>>>
+
 
 {% if page.comments %}
 
