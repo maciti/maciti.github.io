@@ -3,7 +3,7 @@ layout: default
 comments: true
 title:  "Set up your Continuous Integration Locally"
 date:   2017-11-05 19:55:01 +0100
-categories: WCF
+categories: CI
 description: "A simple guide on how to install everything locally to get familiar with continuos integration"
 ---
 # [](#header-1) Continuos Integration. A simple guide on how to install everything locally to get familiar with it. 
@@ -97,7 +97,7 @@ TO BE COMPLETED>>>
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
 var disqus_config = function () {
-this.page.url = 'https://maciti.github.io/c-sharp/2017/11/05/Set-up-your-Continuos-Integration-Locally.html';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.url = 'https://maciti.github.io/ci/2017/11/05/Set-up-your-Continuos-Integration-Locally.html';  // Replace PAGE_URL with your page's canonical URL variable
 this.page.identifier = '2017-11-05-Set-up-your-Continuos-Integration-Locally'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 
