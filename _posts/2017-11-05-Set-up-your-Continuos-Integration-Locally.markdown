@@ -84,8 +84,19 @@ Create a new branch from master and push it..
 
 ![gogs screenshot]({{ site.url }}/assets/CI/xyz.PNG)
 
-TO BE COMPLETED>>>
+## [](#header-3) Run Gogs om startup
 
+On windows lanch task scheduler and create a new task
+
+On trigger tab select AtLogOn or AtStartup
+
+![gogs screenshot]({{ site.url }}/assets/CI/TS.PNG)
+
+On action tab point to gogs.exe and add "web" as input parameter
+
+![gogs screenshot]({{ site.url }}/assets/CI/TS2.PNG)
+
+TO BE COMPLETED
 
 {% if page.comments %}
 
