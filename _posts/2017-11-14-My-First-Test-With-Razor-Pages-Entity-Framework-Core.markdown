@@ -87,6 +87,114 @@ Righ click on pages folder and add a new Razor Page. I called this page "Subscri
 
 ![razor screenshot]({{ site.url }}/assets/RazorPages/rp.PNG)
 
+A SubscribeModel class is created automatically in the Subscrive.cshtml.cs file.
+
+I've added a read-only field that represents my in-memory DB context and initialize it in the constructor.
+
+{% highlight csharp %} 
+
+private readonly InMemoryDbContext _dbContext;
+
+public SubscribeModel(InMemoryDbContext dbContext)
+{
+    _dbContext = dbContext;
+}
+
+{% endhighlight %}
+
+I also added a property Subscriber with a BindProperty attribute for the model binding when I'm going to post using a form the subscriber details. 
+
+I also needed a List of all subscribers to show in the page 
+
+{% highlight csharp %} 
+
+[BindProperty]
+public Subscriber Subscriber { get; set; }
+
+public IEnumerable<Subscriber> Subscribers { get; private set; } 
+
+{% endhighlight %}
+
+I created a method that handle the post of a new subscriber (The naming convention is OnPost[handler])
+
+{% highlight csharp %} 
+
+public PageResult OnPostAdd()
+{
+    if (!ModelState.IsValid)
+        return Page();
+
+    _dbContext.Subscribers.Add(Subscriber);
+
+    _dbContext.SaveChanges();
+
+    Subscribers = _dbContext.Subscribers.ToList();
+
+    return Page();
+}
+
+{% endhighlight %}
+
+## [](#header-3) The Html form
+
+The last step is to write the client part in the Subscribe.cshtml
+
+The form:
+
+{% highlight html %} 
+
+<div class="alert-danger">@Html.ValidationSummary()</div>
+<form method="post">
+	<div asp-validation-summary="All" class="alert-danger"></div>
+	<input asp-for="Subscriber.Name" placeholder="Name" /><br />
+	<input asp-for="Subscriber.Email" placeholder="Email" /><br />
+	<input type="submit" asp-page-handler="add" value="Submit" />
+</form>
+
+{% endhighlight %}
+
+@Html.ValidationSummary() to show server side validation errors, asp-validation-summary="All" for client side ones. On the submit input field I need to specify the name of the handler asp-page-handler="add" (OnPost[handler])
+
+I also wanted to display all the previous subscribers
+
+{% highlight html %} 
+
+<h3>Subscribers:</h3>
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Email</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var sub in Model.Subscribers)
+		{
+			<tr>
+				<td>@sub.Id</td>
+				<td>@sub.Name</td>
+				<td>@sub.Email</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+{% endhighlight %}
+
+The last step is to populate the Subscribers property in the OnGet method
+
+{% highlight html %} 
+
+    public void OnGet()
+    {
+        Subscribers = _dbContext.Subscribers.ToList();
+    }
+		
+{% endhighlight %}	
+
+To test it http://yourmachine/Subscribe
+
 {% if page.comments %}
 
 <div id="disqus_thread"></div>
