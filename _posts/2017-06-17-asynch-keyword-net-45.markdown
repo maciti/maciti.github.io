@@ -18,7 +18,7 @@ In the following I'm trying to simulate a real-life example where a job has to c
     {
         static void Main(string[] args)
         {
-            Task t = SendEmailAsynch();
+            SendEmailAsynch();
 
             Console.WriteLine("Doing other stuff");
 
@@ -30,19 +30,28 @@ In the following I'm trying to simulate a real-life example where a job has to c
         {
             Console.WriteLine("asynch email task..");
 
-            await myTask();
+            var result = await myTask();
+
+            if (result)
+                Console.WriteLine("email sent successfully");
         }
 
         private static Task myTask()
         {
-            var t = new Task(() => {
+            Task<bool> t = Task.Run(() =>
+            {
 
                 Console.WriteLine("sending..");
                 Thread.Sleep(3000);
-                Console.WriteLine("send completed");
-            });
+                
+                if (true)
+                {
+                    return true;
+                }
 
-            t.Start();
+                return false;
+
+            });
 
             return t;
         }
@@ -52,7 +61,7 @@ In the following I'm trying to simulate a real-life example where a job has to c
 
 The execution of it is going to print the following:
 
-![asynch screenshot]({{ site.url }}/assets/Asynch/asynchResult.PNG)
+![asynch screenshot]({{ site.url }}/assets/Async/asynchResult.PNG)
 
 {% if page.comments %}
 
