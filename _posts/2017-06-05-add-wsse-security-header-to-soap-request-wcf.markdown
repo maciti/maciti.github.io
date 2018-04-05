@@ -10,7 +10,7 @@ description: "Add wsse security header to soap request in WCF injecting the wsse
 
 It could happen that you have to interface your WCF client to a web service that uses WS-Security/WSE protocol. Web Services Security (WS-Security, WSS) is an extension to SOAP to apply security to Web services. 
 
-Unfortunately WS-Security/WSE protocol is not natively supported in .NET WCF.
+Unfortunately WS-Security/WSE protocol is not natively supported in .NET WCF 4.
 
 WSS incorporates security features in the header of a SOAP message. Inside the header of a SOAP message, WSS has a security element (one or more than one) used to verify the end-user identity. Example:
 
