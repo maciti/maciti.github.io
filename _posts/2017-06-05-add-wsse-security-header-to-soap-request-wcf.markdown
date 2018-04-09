@@ -37,7 +37,7 @@ In order to allow your WCF client application to communicate with a WSS service 
 
 public object BeforeSendRequest(ref System.ServiceModel.Channels.Message request, IClientChannel channel)
 {
-	var soapModified = InjectWsseHeader(request.ToString());
+    var soapModified = InjectWsseHeader(request.ToString());
 
     using (var memoryStream = new MemoryStream())
     using (var writerStream = new StreamWriter(memoryStream)) 
@@ -50,6 +50,7 @@ public object BeforeSendRequest(ref System.ServiceModel.Channels.Message request
         request = System.ServiceModel.Channels.Message.CreateMessage(reader, int.MaxValue, request.Version);
     }
 
+    this.SoapMessages.Request = soapModified;
     return null;
 }
 
