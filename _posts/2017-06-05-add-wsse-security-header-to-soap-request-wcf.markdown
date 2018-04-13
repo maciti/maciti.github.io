@@ -39,16 +39,14 @@ public object BeforeSendRequest(ref System.ServiceModel.Channels.Message request
 {
     var soapModified = InjectWsseHeader(request.ToString());
 
-    using (var memoryStream = new MemoryStream())
-    using (var writerStream = new StreamWriter(memoryStream)) 
-	{
-        writerStream.Write(soapModified);
-        writerStream.Flush();
-        memoryStream.Position = 0;
+    var ms = new MemoryStream();
+    var writer = new StreamWriter(ms);
+    writer.Write(soapModified);
+    writer.Flush();
+    ms.Position = 0;
 
-        var reader = XmlReader.Create(memoryStream);
-        request = System.ServiceModel.Channels.Message.CreateMessage(reader, int.MaxValue, request.Version);
-    }
+    var reader = XmlReader.Create(ms);
+    request = System.ServiceModel.Channels.Message.CreateMessage(reader, int.MaxValue, request.Version);
 
     this.SoapMessages.Request = soapModified;
     return null;
