@@ -193,7 +193,7 @@ The last step is to populate the Subscribers property in the OnGet method
 		
 {% endhighlight %}	
 
-To test it http://yourmachine/Subscribe
+To test it http://yourmachine/Subscribe    
 
 {% if page.comments %}
 
