@@ -65,7 +65,7 @@ A simple example of sending multiple requests (in parallel) to a web service, us
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
 var disqus_config = function () {
-this.page.url = 'https://maciti.github.io/c-sharp/2017/07/13/WCF-client-send-multiple-requests-parallel.html';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.url = 'https://maciti.github.io/wcf/2017/07/13/WCF-client-send-multiple-requests-parallel.html';  // Replace PAGE_URL with your page's canonical URL variable
 this.page.identifier = '2017-07-13-WCF-client-send-multiple-requests-parallel'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 
