@@ -64,7 +64,7 @@ aspnet_regiis -pd "connectionStrings" -app "/yourappname"
 
 var disqus_config = function () {
 this.page.url = 'https://maciti.github.io/mvc/2018/08/25/Encrypt-Database-Connection-String.html';  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = '2018-07-25-Encrypt-Database-Connection-String'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.identifier = '2018-08-25-Encrypt-Database-Connection-String'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 
 (function() { // DON'T EDIT BELOW THIS LINE
