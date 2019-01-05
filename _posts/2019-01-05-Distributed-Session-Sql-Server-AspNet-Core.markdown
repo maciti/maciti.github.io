@@ -36,13 +36,13 @@ here I'm giving to the new user the permission to select/update/write/delete on 
 
 Create a new project (ASP.NET core Web Application) selecting NET.Core 2.1 as target Framework and ASP.NET MVC as project template.
 
-Using Nuget install the following packages
+Using Nuget install the following packages: Microsoft.Extensions.Caching.SqlServer, Microsoft.Extensions.Caching.SqlConfig.Tools,Microsoft.AspNetCore.Session
 
 ![nuget package screenshot]({{ site.url }}/assets/DistributedSession/CaptureNuget.JPG)
 
-![nuget package screenshot3]({{ site.url }}/assets/DistributedSession/CaptureNuget.JPG)
+![nuget package screenshot3]({{ site.url }}/assets/DistributedSession/CaptureNuget3.JPG)
 
-![nuget package screenshot2]({{ site.url }}/assets/DistributedSession/CaptureNuget.JPG)
+![nuget package screenshot2]({{ site.url }}/assets/DistributedSession/CaptureNuget2.JPG)
 
 In the appsettings.json add the connection string:
 
@@ -68,7 +68,7 @@ in the secret.json insert the password
 }
 {% endhighlight %}
 
-In the startup.cs, in the ConfigureServices method add the Distributed Sql Server Cache, the session and the :
+In the startup.cs, in the ConfigureServices method add the Distributed Sql Server Cache:
 
 
 {% highlight csharp %}
