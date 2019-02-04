@@ -1,12 +1,12 @@
 ---
 layout: default
 comments: true
-title:  "Asynch keywork in .NET 4.5"
+title:  "Async keywork in .NET 4.5"
 date:   2017-06-17 19:55:01 +0100
 categories: c-sharp
 description: "Since .net 4.5 the CLR can call any method asynchronously in an automatic way"
 ---
-# [](#header-1) Asynch keywork in .NET 4.5
+# [](#header-1) Async keywork in .NET 4.5
 
 Since .net 4.5 the CLR can call any method asynchronously in an automatic way, this is a simple example to show how to use it 
 
