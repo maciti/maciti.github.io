@@ -36,7 +36,7 @@ In the following I'm trying to simulate a real-life example where a job has to c
                 Console.WriteLine("email sent successfully");
         }
 
-        private static Task myTask()
+        private static Task<bool> myTask()
         {
             Task<bool> t = Task.Run(() =>
             {
