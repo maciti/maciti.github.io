@@ -12,6 +12,8 @@ For this test you can use your local machine, a remote server or a virtual machi
 
 I decided to install all this tools on a virtual machine running Windows Server 2016 using Virtual Box. Virtual Box is running on my local Win10 host machine.
 
+# [](#header-2) The Repository Server
+
 ## [](#header-3) Install a Git Repository Server
 
 As a git repo server I decided to try Go Git Service (Gogs https://gogs.io/). 
@@ -96,6 +98,10 @@ On action tab point to gogs.exe and add "web" as input parameter
 
 ![gogs screenshot]({{ site.url }}/assets/CI/TS2.PNG)
 
+# [](#header-2) The Deploy Server
+
+# [](#header-2) The Build Server
+
 ## [](#header-3) Install Jenkins
 
 Download and run the windows installer, the windows installer automatically runs Jenkins as a windows service. 
@@ -111,6 +117,7 @@ Navigate to localhost:8080 and follow the installation steps
 ![gogs screenshot]({{ site.url }}/assets/CI/Jenkins4.PNG)
 
 TO BE COMPLETED
+
 
 {% if page.comments %}
 
