@@ -98,7 +98,29 @@ On action tab point to gogs.exe and add "web" as input parameter
 
 ![gogs screenshot]({{ site.url }}/assets/CI/TS2.PNG)
 
-# [](#header-2) The Deploy Server
+# [](#header-2) The Deployment Automation Server
+
+As a deployment automation & release server I dedided to use Octopus
+
+## [](#header-3) Install Octopus
+
+For this test I've installed octopus in the same remote machine I installed gog.
+
+Octopus needs sql server to function, so I've intalled sql server express. After that I started the installation of octopus:
+
+![octopus installation]({{ site.url }}/assets/Octopus/start.JPG)
+
+Check "start a free trial", after 30 days you can still use it.. you just need to convert it into octopus community edition
+
+![octopus installation]({{ site.url }}/assets/Octopus/db.JPG)
+
+I created a db named Octopus. In the next step select the port where ocopus deploy server is going to accept connection. After that set up admin user and password
+
+![octopus installation]({{ site.url }}/assets/Octopus/user.JPG)
+ 
+..finally click install! 
+
+![octopus installation]({{ site.url }}/assets/Octopus/install.JPG)
 
 # [](#header-2) The Build Server
 
