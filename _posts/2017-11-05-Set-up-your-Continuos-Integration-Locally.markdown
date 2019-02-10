@@ -102,7 +102,7 @@ On action tab point to gogs.exe and add "web" as input parameter
 
 As a deployment automation & release server I dedided to use Octopus
 
-## [](#header-3) Install Octopus
+## [](#header-3) Install Octopus Server
 
 For this test I've installed octopus in the same remote machine I installed gog.
 
@@ -121,6 +121,16 @@ I created a db named Octopus. In the next step select the port where ocopus depl
 ..finally click install! 
 
 ![octopus installation]({{ site.url }}/assets/Octopus/install.JPG)
+
+A windows service named OctopusDeploy is created, it should start automatically at windows startup. Note: you should backup your octopus masterkey, the key is used for data encryption, to show your master key run the following command from command prompt: octopus.server show-master-key
+
+Now navigate to http://192.168.56.101:8888 (replace with your remote machine ip) and login with your admin credentials just created
+
+## [](#header-3) Install a tentacle
+
+Now that the octopus server is installed we need to installed our first tentacle on a different machine. A tentacle is a lightweight agent service, it communicates with octopus server. Octopus server will be responsible to deploy packages to the machines where the tentacles are installed.
+
+![tentacle]({{ site.url }}/assets/Octopus/tentacle.JPG)
 
 # [](#header-2) The Build Server
 
