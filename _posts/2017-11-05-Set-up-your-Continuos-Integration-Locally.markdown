@@ -138,11 +138,11 @@ After that you need to add a deployment target
 
 ![octopus installation]({{ site.url }}/assets/Octopus/third.JPG)
 
-In the next step you'll be prompted with a thumbprint and a form (used to specify the Tentacle machine details)
+In the next step you'll be prompted with a thumbprint and a form (used to specify the Tentacle details)
 
 ![octopus installation]({{ site.url }}/assets/Octopus/fourth.JPG)
 
-We don't have a tentacle yet.. <b>Copy the thumbprint..</b> it's now time to install our first tentacle on a new machine 
+We don't have a tentacle yet.. <b>Copy the thumbprint..</b> it's now time to install our first tentacle on a new machine (we will come back here ***) 
 
 ## [](#header-3) Install a tentacle
 
@@ -166,7 +166,24 @@ When you install the tentacle using the wizard select "listening tentacle"
 
 In the next step we need to insert the thumbprint we copied before, the thumbprint is used by the tentacle to trust the Octopus server.
  
+![octopus installation]({{ site.url }}/assets/Octopus/Thumbprint.JPG)
 
+When the installation is completed a Tentacle windows service will be running..listening for incoming requests from the Octopus server.
+
+Now we leave the staging machine and we go back to the point where we create our first deployment target ***
+
+![octopus installation]({{ site.url }}/assets/Octopus/fourth.JPG)
+
+Insert the IP address of the machine where the tentacle is installed (I had to create a NAT network in virtual box to achieve this)
+
+If the Tentacle can be reached you can create a deployment target, specify display name (a unique machine name), environment name and target roles:
+
+![octopus installation]({{ site.url }}/assets/Octopus/Connect.JPG)
+
+note: after your new deployement target is created you might need to update your calamari version.
+
+TO BE COMPLETED
+ 
 # [](#header-2) The Build Server
 
 ## [](#header-3) Install Jenkins
