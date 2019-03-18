@@ -126,11 +126,38 @@ A windows service named OctopusDeploy is created, it should start automatically 
 
 Now navigate to http://192.168.56.101:8888 (replace with your remote machine ip) and login with your admin credentials just created
 
+As soon as you log in you are prompted with a setup wizard, click on "create your first environment"
+
+![octopus installation]({{ site.url }}/assets/Octopus/first.JPG)
+
+I called it "Staging"
+
+![octopus installation]({{ site.url }}/assets/Octopus/second.JPG)
+
+After that you need to add a deployment target
+
+![octopus installation]({{ site.url }}/assets/Octopus/third.JPG)
+
+In the next step you'll be prompted with a thumbprint and a form (used to specify the Tentacle machine details)
+
+![octopus installation]({{ site.url }}/assets/Octopus/fourth.JPG)
+
+<b>Copy the thumbprint</b> it's now time to install our first tentacle on a new machine 
+
 ## [](#header-3) Install a tentacle
 
 Now that the octopus server is installed we need to installed our first tentacle on a different machine. A tentacle is a lightweight agent service, it communicates with octopus server. Octopus server will be responsible to deploy packages to the machines where the tentacles are installed.
 
 ![tentacle]({{ site.url }}/assets/Octopus/tentacle.JPG)
+
+For the tentacle machine I created a new virtual machine called Staging.
+
+![octopus staging]({{ site.url }}/assets/Octopus/CStaging.JPG)
+
+and from the octopus website I've downloaded and installed Octopus Tentacle
+
+![octopus tentacle download]({{ site.url }}/assets/Octopus/Tentacle2.JPG)
+ 
 
 # [](#header-2) The Build Server
 
