@@ -142,7 +142,7 @@ In the next step you'll be prompted with a thumbprint and a form (used to specif
 
 ![octopus installation]({{ site.url }}/assets/Octopus/fourth.JPG)
 
-We don't have a tentacle yet.. <b>Copy the thumbprint..</b> it's now time to install our first tentacle on a new machine (we will come back here ***) 
+We don't have a tentacle yet.. <b>Copy the thumbprint..</b> it's now time to install our first tentacle on a new machine (we will come back here <b>***</b>) 
 
 ## [](#header-3) Install a tentacle
 
@@ -170,7 +170,7 @@ In the next step we need to insert the thumbprint we copied before, the thumbpri
 
 When the installation is completed a Tentacle windows service will be running..listening for incoming requests from the Octopus server.
 
-Now we leave the staging machine and we go back to the point where we create our first deployment target ***
+Now we leave the staging machine and we go back to the point where we were creating our first deployment target <b>***</b>
 
 ![octopus installation]({{ site.url }}/assets/Octopus/fourth.JPG)
 
