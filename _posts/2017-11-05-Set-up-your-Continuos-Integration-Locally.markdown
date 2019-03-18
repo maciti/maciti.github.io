@@ -142,11 +142,11 @@ In the next step you'll be prompted with a thumbprint and a form (used to specif
 
 ![octopus installation]({{ site.url }}/assets/Octopus/fourth.JPG)
 
-<b>Copy the thumbprint</b> it's now time to install our first tentacle on a new machine 
+We don't have a tentacle yet.. <b>Copy the thumbprint..</b> it's now time to install our first tentacle on a new machine 
 
 ## [](#header-3) Install a tentacle
 
-Now that the octopus server is installed we need to installed our first tentacle on a different machine. A tentacle is a lightweight agent service, it communicates with octopus server. Octopus server will be responsible to deploy packages to the machines where the tentacles are installed.
+Now that the octopus server is installed we need to install our first tentacle on a different machine. A tentacle is a lightweight agent service, it communicates with octopus server. Octopus server will be responsible to deploy packages to the machines where the tentacles are installed.
 
 ![tentacle]({{ site.url }}/assets/Octopus/tentacle.JPG)
 
@@ -157,6 +157,14 @@ For the tentacle machine I created a new virtual machine called Staging.
 and from the octopus website I've downloaded and installed Octopus Tentacle
 
 ![octopus tentacle download]({{ site.url }}/assets/Octopus/Tentacle2.JPG)
+
+When you install the tentacle using the wizard select "listening tentacle"
+
+![octopus installation]({{ site.url }}/assets/Octopus/StorageTentacle.JPG)
+
+![octopus installation]({{ site.url }}/assets/Octopus/ListeningTentacle.JPG)
+
+In the next step we need to insert the thumbprint we copied before, the thumbprint is used by the tentacle to trust the Octopus server.
  
 
 # [](#header-2) The Build Server
