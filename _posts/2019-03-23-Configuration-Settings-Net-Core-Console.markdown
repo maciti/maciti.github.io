@@ -27,18 +27,18 @@ I created a class to build and provide an IConfiguration with keys and values
 {% highlight csharp %}
     public class SettingsProvider
     {
-        private static IConfiguration _configurationRoot;
+        private static IConfiguration _configuration;
 
         public static IConfiguration Configuration
         {
             get
             {
-                if (_configurationRoot == null)
+                if (_configuration == null)
                 {
                     BuildConfiguration();
                 }
 
-                return _configurationRoot;
+                return _configuration;
             }
         }
 
@@ -48,7 +48,7 @@ I created a class to build and provide an IConfiguration with keys and values
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 
-            _configurationRoot = builder.Build();
+            _configuration = builder.Build();
         }
     }
 {% endhighlight %}
