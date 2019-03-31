@@ -182,11 +182,11 @@ If the Tentacle can be reached you can create a deployment target, specify displ
 
 note: after your new deployement target is created you might need to update your calamari version.
 
-TO BE COMPLETED
- 
 # [](#header-2) The Build Server
 
 ## [](#header-3) Install Jenkins
+
+note: I've installed Jenkins in the same machine where I installed OctopusDeploy.
 
 Download and run the windows installer, the windows installer automatically runs Jenkins as a windows service. 
 
@@ -200,7 +200,35 @@ Navigate to localhost:8080 and follow the installation steps
 
 ![gogs screenshot]({{ site.url }}/assets/CI/Jenkins4.PNG)
 
-TO BE COMPLETED
+## [](#header-3) Create your first project
+
+Click on create new jobs. <b> note: in Gogs I created a new repository called OctopuTest where I published e simple MVC web project</b>
+note: <b> before starting you need to have the VS build tools installed in your server:</b> https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2017
+
+![gogs screenshot]({{ site.url }}/assets/Jenkins/Project.PNG)
+
+I created a freestyle project called OctopusTest. In the next step I specified my repo url and the branches I want to build. The repo is public and it's in the same server, so I don't need any credentials in this case. 
+note: In case you use another repo like GitHub you will need to provide authentication.
+
+![gogs screenshot]({{ site.url }}/assets/Jenkins/Project.PNG)
+
+In the build section add build step "Build VS proj using MSBuild" and specify the name of your solution.
+
+![gogs screenshot]({{ site.url }}/assets/Jenkins/Build.PNG)
+
+![gogs screenshot]({{ site.url }}/assets/Jenkins/VS2017.PNG)
+
+the VS2017 version was specified in the global configuration tools:
+
+![gogs screenshot]({{ site.url }}/assets/Jenkins/Default.PNG)
+
+build now! The blue ball means that the last build was successful.
+
+![gogs screenshot]({{ site.url }}/assets/Jenkins/Blue.PNG)
+
+# [](#header-2) Put Everything Together 
+
+TO DO
 
 
 {% if page.comments %}
