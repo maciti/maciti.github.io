@@ -203,12 +203,13 @@ Navigate to localhost:8080 and follow the installation steps
 ## [](#header-3) Create your first project
 
 Click on create new jobs. <b> note: in Gogs I created a new repository called OctopuTest where I published e simple MVC web project</b>
+
 note: <b> before starting you need to have the VS build tools installed in your server:</b> https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2017
 
 ![gogs screenshot]({{ site.url }}/assets/Jenkins/Project.JPG)
 
-I created a freestyle project called OctopusTest. In the next step I specified my repo url and the branches I want to build. The repo is public and it's in the same server, so I don't need any credentials in this case. 
-note: In case you use another repo like GitHub you will need to provide authentication.
+I created a freestyle project called OctopusTest. In the next step I specified my repo url and the branches I want to build. The repo is public and it's in the same server, so I don't need any credentials in this case. <br/>
+note: In case you use another repo server like GitHub you will need to provide authentication.
 
 ![gogs screenshot]({{ site.url }}/assets/Jenkins/Project.JPG)
 
