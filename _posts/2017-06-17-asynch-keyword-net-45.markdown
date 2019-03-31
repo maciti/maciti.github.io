@@ -26,7 +26,7 @@ In the following I'm trying to simulate a real-life example where a job has to c
 
         }
 
-        public static async Task SendEmailAsynch()
+        public static async void SendEmailAsynch()
         {
             Console.WriteLine("asynch email task..");
 
