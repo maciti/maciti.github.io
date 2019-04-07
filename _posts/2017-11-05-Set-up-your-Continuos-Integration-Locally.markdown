@@ -229,7 +229,29 @@ build now! The blue ball means that the last build was successful.
 
 # [](#header-2) Put Everything Together 
 
-TO DO
+Install octopack in your solution using nuget package manager. This will be needed to build a nuget package that octopus will use to deploy.
+
+![gogs screenshot]({{ site.url }}/assets/Octopus/Octopack.JPG)
+
+In Octopus create your first project
+
+![gogs screenshot]({{ site.url }}/assets/Octopus/OctopusWebTest.JPG)
+
+Click "Define your deployement process", then "Add Steps" and choose "Deploy package"
+
+![gogs screenshot]({{ site.url }}/assets/Octopus/DP.JPG)
+
+Specify process name, add role and specify package name (in this case the name of the solution)
+
+![gogs screenshot]({{ site.url }}/assets/Octopus/DP2.JPG)
+
+expanding "configure feature" you can specify where you want to install the package, at the moment I have only one environment (staging). When you add a new environment, e.g. UAT, you need to have the same folder configuration in UAT machine, otherwise you need to use variables.
+
+![gogs screenshot]({{ site.url }}/assets/Octopus/CID.JPG)
+
+
+
+
 
 
 {% if page.comments %}
