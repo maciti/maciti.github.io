@@ -249,6 +249,33 @@ expanding "configure feature" you can specify where you want to install the pack
 
 ![gogs screenshot]({{ site.url }}/assets/Octopus/CID.JPG)
 
+After this we need to create an API Key to allow Jenkins to communicate with octopus.
+
+![gogs screenshot]({{ site.url }}/assets/Jenkins/Key.JPG)
+
+in Jenkins, in OctopusTest propject click configure, in the build step add the following command line instructions 
+
+/p:RunOctoPack=true /p:OctoPackPackageVersion=1.1.${BUILD_NUMBER} /p:OctoPackPublishPackageToHttp=http://localhost/nuget/packages /p:OctoPackPublishApiKey=${OctopusApiKey}
+
+you can find more info here <a href="https://octopus.com/docs/api-and-integration/jenkins">https://octopus.com/docs/api-and-integration/jenkins</a>
+
+![gogs screenshot]({{ site.url }}/assets/Jenkins/CL.JPG)
+
+download the command line tool https://octopus.com/downloads and extract it in jenkins machine. Add a build step "Execute Windows batch command" in order to create an octopus release after the package is created
+
+"C:\Tools\Octo\Octo.exe" create-release --project OctoFX --version 1.1.%BUILD_NUMBER% --packageversion 1.1.%BUILD_NUMBER% --server http://localhost/ --apiKey %OctopusApiKey% --releaseNotes "Jenkins build [%BUILD_NUMBER%]"
+
+![gogs screenshot]({{ site.url }}/assets/Jenkins/Build3.JPG)
+
+and add the OctopusApiKey in Credentials
+
+![gogs screenshot]({{ site.url }}/assets/Jenkins/cred.png)
+
+![gogs screenshot]({{ site.url }}/assets/Jenkins/Secret.JPG)
+
+TO COMPLETE
+
+
 
 
 
