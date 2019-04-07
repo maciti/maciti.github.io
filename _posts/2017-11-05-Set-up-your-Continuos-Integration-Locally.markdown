@@ -261,7 +261,7 @@ you can find more info here <a href="https://octopus.com/docs/api-and-integratio
 
 ![gogs screenshot]({{ site.url }}/assets/Jenkins/CL.JPG)
 
-download the command line tool https://octopus.com/downloads and extract it in jenkins machine. Add a build step "Execute Windows batch command" in order to create an octopus release after the package is created
+download the command line tool <a href="https://octopus.com/downloads">https://octopus.com/downloads</a> and extract it in jenkins machine. Add a build step "Execute Windows batch command" in order to create an octopus release after the package is created
 
 "C:\Tools\Octo\Octo.exe" create-release --project OctoFX --version 1.1.%BUILD_NUMBER% --packageversion 1.1.%BUILD_NUMBER% --server http://localhost/ --apiKey %OctopusApiKey% --releaseNotes "Jenkins build [%BUILD_NUMBER%]"
 
