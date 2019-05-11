@@ -1,12 +1,12 @@
 ---
 layout: default
 comments: true
-title:  "Configuration in .NET Core Console App"
+title:  "Configuration in .NET Core 1.0 Console App"
 date:   2019-03-23 19:55:01 +0100
 categories: .NET Core
-description: "Configuration in .NET Core Console App using appsettings.json"
+description: "Configuration in .NET Core 1.0 Console App using appsettings.json"
 ---
-# [](#header-1) Configuration in .NET Core Console Application
+# [](#header-1) Configuration in .NET Core 1.0 Console Application
 
 The first time I created a console application in .net core I had some troubles finding a simple documentation on how to use a json application settings file and retrieve configuration values from it.
 
