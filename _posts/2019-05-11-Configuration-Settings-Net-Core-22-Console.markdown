@@ -8,7 +8,7 @@ description: "Configuration in .NET Core 2.2 Console App using HostBuilder"
 ---
 # [](#header-1) Configuration in .NET Core 2.2 Console App using HostBuilder
 
-Similar to the WebHostBuilder class in ASP.NET core that allows to build a WebHost which hosts a web application, since .Net core 2.1, for non http scenarios, a generic HostBuilder has been available, and allows us to build an Host (IHost). 
+Similar to the WebHostBuilder class that allows to build a WebHost which hosts a web application, since .Net core 2.1, for non http scenarios, a generic HostBuilder has been available, and allows us to build an Host (IHost) that hosts services. 
 
 In my previous post <a href="https://maciti.github.io/.net/core/2019/03/23/Configuration-Settings-Net-Core-Console.html">Configuration in .NET Core 1.0 Console Application</a> I described how to load application settings from a json file in a console app written in .net core 1.0. 
 
@@ -16,9 +16,9 @@ In this post, using .Net core 2.2, I tried to do the same using the HostBuilder.
 
 ## [](#header-3) Add an AppSettings.json file
 
-After your Console App (.Net Core) is created, add a json file. I called it appsettings.json. Add some key/values and in its properties select "Copy if newer" for "Copy to Output Directory"
+After a Console App (.Net Core > 2.1) is created, add a json file. I called it appsettings.json. Add some key/values and in its properties select "Copy if newer" for "Copy to Output Directory"
 
-![app settings]({{ site.url }}/assets/Console/appsettings2.JPG)
+![app settings]({{ site.url }}/assets/Console/appsettings3.JPG)
 
 ![app settings]({{ site.url }}/assets/Console/appsettings.JPG)
 
@@ -32,7 +32,7 @@ Using nuget I installed the following packages:
 - Microsoft.Extensions.Options, 
 - Microsoft.Extensions.Options.ConfigurationExtensions
 
-I created a class in order to bind my configuration section against an object
+I created a class in order to bind my configuration section against an object (note that property names must match config names)
 
 {% highlight csharp %}
     public class RabbitMqConfiguration
@@ -48,9 +48,7 @@ I created a class in order to bind my configuration section against an object
     }
 {% endhighlight %}
 
-I will use the HostBuilder to build an Host (IHost).
-
-in Main using the ConfigureAppConfiguration method of the HostBuilder I'll set up the configuration, and using the ConfigureServices method I'll add services to the app's dependency injection container.
+I will use the HostBuilder to build an Host (IHost). In Main using the ConfigureAppConfiguration method of the HostBuilder I'll set up the configuration, and using the ConfigureServices method I'll add services to the app's dependency injection container.
 
 In the ConfigurationServices method I registered a configuration instance where I bound the RabbitMq configuration section against the RabbitMqConfiguration class. I also registered a hosted service.
 
