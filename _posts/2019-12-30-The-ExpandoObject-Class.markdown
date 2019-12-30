@@ -42,10 +42,15 @@ foreach (var property in person)
 
 output:
 > Name: John
+>
 > Surname: Lastname
+>
 > DateOfBirth: 30-Dec-1960
+>
 > Mood: happy
+>
 > PresentYourself: System.Action
+>
 > ChangeMood: System.Action`1[System.String]
 
 Thanks to dynamic binding I'm able to access the properties of my ExpandoObject in a simple way e.g. person.Mood...without the need of using GetProperty() GetAttribute() etc
@@ -62,6 +67,7 @@ person.PresentYourself();
 
 output:
 > sad
+>
 > Hello! My name is John
 
 {% if page.comments %}
