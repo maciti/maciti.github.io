@@ -11,21 +11,21 @@ description: "Some simple code to start using the ExpandoObject class"
 The class ExpandoObject from System.Dynamics represents an object whose members can be dynamically added and removed at run time.
 The ExpandoObject supports runtime binding and implements the DLR interface IDynamicMetaObjectProvider, allowing you to share the expandoobject written in c# with another language that supports DLR interop.
 
-The structure of ExpandoObject is a Dictionary of type string, object...ss you can see in the reference source <a href="https://github.com/microsoft/referencesource/blob/master/System.Core/Microsoft/Scripting/Actions/ExpandoObject.cs">ExpandoObject class</a>.
+The structure of ExpandoObject is a Dictionary of type string, object...as you can see in the reference source <a href="https://github.com/microsoft/referencesource/blob/master/System.Core/Microsoft/Scripting/Actions/ExpandoObject.cs">ExpandoObject class</a>.
 
 I created a simple object with some attributes and methods:
 
 {% highlight csharp %}
             
-	dynamic person = new ExpandoObject();
+dynamic person = new ExpandoObject();
 
-	person.Name = "John";
-	person.Surname = "Lastname";
-	person.DateOfBirth = "30-Dec-1960";
-	person.Mood = "happy";
+person.Name = "John";
+person.Surname = "Lastname";
+person.DateOfBirth = "30-Dec-1960";
+person.Mood = "happy";
 
-	person.PresentYourself = new Action(() => Console.WriteLine($"Hello! My name is {person.Name}"));
-	person.ChangeMood = new Action<string>(x => person.Mood = x);
+person.PresentYourself = new Action(() => Console.WriteLine($"Hello! My name is {person.Name}"));
+person.ChangeMood = new Action<string>(x => person.Mood = x);
 
 {% endhighlight %}
 
@@ -41,12 +41,12 @@ foreach (var property in person)
 {% endhighlight %}
 
 output:
->Name: John
->Surname: Lastname
->DateOfBirth: 30-Dec-1960
->Mood: happy
->PresentYourself: System.Action
->ChangeMood: System.Action`1[System.String]
+> Name: John
+> Surname: Lastname
+> DateOfBirth: 30-Dec-1960
+> Mood: happy
+> PresentYourself: System.Action
+> ChangeMood: System.Action`1[System.String]
 
 Thanks to dynamic binding I'm able to access the properties of my ExpandoObject in a simple way e.g. person.Mood...without the need of using GetProperty() GetAttribute() etc
 
@@ -61,8 +61,8 @@ person.PresentYourself();
 {% endhighlight %}
 
 output:
->sad
->Hello! My name is John
+> sad
+> Hello! My name is John
 
 {% if page.comments %}
 
@@ -74,7 +74,7 @@ output:
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
 var disqus_config = function () {
-this.page.url = 'https://maciti.github.io/c#/2019/12/30/The-ExpandoObject-Class.html';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.url = 'https://maciti.github.io/c%23/2019/12/30/The-ExpandoObject-Class.html';  // Replace PAGE_URL with your page's canonical URL variable
 this.page.identifier = '2019-12-30-The-ExpandoObject-Class'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 
