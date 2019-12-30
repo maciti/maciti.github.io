@@ -72,7 +72,7 @@ var uri = SettingsProvider.Configuration["RabbitMqUri"];
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
 var disqus_config = function () {
-this.page.url = 'https://maciti.github.io/asp.net/core/2019/03/23/Configuration-Settings-Net-Core-Console.html';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.url = 'https://maciti.github.io/.net/core/2019/03/23/Configuration-Settings-Net-Core-Console.html';  // Replace PAGE_URL with your page's canonical URL variable
 this.page.identifier = '2019-03-23-Configuration-Settings-Net-Core-Console'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 
