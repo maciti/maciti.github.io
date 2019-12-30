@@ -21,7 +21,7 @@ dynamic person = new ExpandoObject();
 
 person.Name = "John";
 person.Surname = "Lastname";
-person.DateOfBirth = "30-Dec-1960";
+person.DateOfBirth = new DateTime(1960, 12, 12);
 person.Mood = "happy";
 
 person.PresentYourself = new Action(() => Console.WriteLine($"Hello! My name is {person.Name}"));
@@ -45,7 +45,7 @@ output:
 >
 > Surname: Lastname
 >
-> DateOfBirth: 30-Dec-1960
+> DateOfBirth: 12/12/1960 00:00:00
 >
 > Mood: happy
 >
