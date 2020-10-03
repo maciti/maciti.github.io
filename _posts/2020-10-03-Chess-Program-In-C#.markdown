@@ -14,10 +14,7 @@ I've created a simple project to play chess against the computer.
 
 The AI algorithm is a minimax implementation with alpha-beta pruning.
 
-More info and the source code can be found here
-
-<a href="https://github.com/maciti/ChessAI">https://github.com/maciti/ChessAI</a>
-
+More info and the source code can be found here <a href="https://github.com/maciti/ChessAI">https://github.com/maciti/ChessAI</a>
 
 {% if page.comments %}
 
