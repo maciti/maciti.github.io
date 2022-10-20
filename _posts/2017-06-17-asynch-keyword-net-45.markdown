@@ -14,48 +14,49 @@ In the following I'm trying to simulate a real-life example where a job has to c
 
 {% highlight csharp %}
 
-    class Program
+class Program
+{
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            SendEmailAsynch();
+        SendEmailAsynch();
 
-            Console.WriteLine("Doing other stuff");
+        Console.WriteLine("Doing other stuff");
 
-            Console.ReadLine();
+        Console.ReadLine();
 
-        }
-
-        public static async void SendEmailAsynch()
-        {
-            Console.WriteLine("asynch email task..");
-
-            var result = await myTask();
-
-            if (result)
-                Console.WriteLine("email sent successfully");
-        }
-
-        private static Task<bool> myTask()
-        {
-            Task<bool> t = Task.Run(() =>
-            {
-
-                Console.WriteLine("sending..");
-                Thread.Sleep(3000);
-                
-                if (true)
-                {
-                    return true;
-                }
-
-                return false;
-
-            });
-
-            return t;
-        }
     }
+
+    public static async Task SendEmailAsynch()
+    {
+        Console.WriteLine("asynch email task..");
+
+        bool success = await SendTask();
+
+        if (success)
+            Console.WriteLine("email sent successfully");
+    }
+
+    private static Task<bool> SendTask()
+    {
+        Task<bool> t = Task.Run(() =>
+        {
+            Console.WriteLine("sending..");
+            Thread.Sleep(3000);
+
+            if (true) //email was sent successfully
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        });
+
+        return t;
+    }
+}
 
 {% endhighlight %}
 
