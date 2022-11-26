@@ -6,7 +6,7 @@ date:   2017-05-14 19:55:01 +0100
 categories: c-sharp
 description: "A simple example of use of a private class in C#"
 ---
-# [](#header-1)Private class example C sharp
+# [](#header-1)Private class example C#
 
 A simple example of use of a private class in C#
 
