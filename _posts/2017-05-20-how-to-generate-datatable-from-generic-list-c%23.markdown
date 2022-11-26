@@ -3,10 +3,10 @@ layout: default
 comments: true
 title:  "How to generate datatable from generic list in C#"
 date:   2017-05-20 19:55:01 +0100
-categories: c-sharp
+categories: C#
 description: "How to generate datatable from generic list in C# using reflection and extension methods..and vice versa"
 ---
-# [](#header-1)How to generate datatable from generic list (C sharp)
+# [](#header-1)How to generate datatable from generic list (C#)
 
 I wanted to add an extension method to a generic list to convert it into a datatable in order to be used as input param in a Stored Procedure
 
@@ -126,7 +126,7 @@ I also wrote this simple method that can be useful in case you want to convert a
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
 var disqus_config = function () {
-this.page.url = 'https://maciti.github.io/c-sharp/2017/05/20/how-to-generate-datatable-from-generic-list-c-sharp.html';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.url = 'https://maciti.github.io/c%23/2017/05/20/how-to-generate-datatable-from-generic-list-c%23.html';  // Replace PAGE_URL with your page's canonical URL variable
 this.page.identifier = '2017-05-20-how-to-generate-datatable-from-generic-list-c-sharp'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 

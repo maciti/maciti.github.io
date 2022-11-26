@@ -16,6 +16,9 @@ The AI algorithm is a minimax implementation with alpha-beta pruning.
 
 More info and the source code can be found here <a href="https://github.com/maciti/ChessAI">https://github.com/maciti/ChessAI</a>
 
+{% highlight csharp %}
+{% endhighlight %}
+
 {% if page.comments %}
 
 <div id="disqus_thread"></div>
@@ -26,8 +29,8 @@ More info and the source code can be found here <a href="https://github.com/maci
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
 var disqus_config = function () {
-this.page.url = 'https://maciti.github.io/c%23/2020/10/03/Chess-Program-In-C%23.html';  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = '2020-10-03-Chess-Program-In-C%23'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.url = 'https://maciti.github.io/c%23/2020/10/03/chess-program-in-c%23.html';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = '2020-10-03-chess-program-in-c%23'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 
 (function() { // DON'T EDIT BELOW THIS LINE

@@ -3,12 +3,12 @@ layout: default
 comments: true
 title:  "An example of use of the observer design pattern in c sharp with events and delegates"
 date:   2017-05-20 19:55:01 +0100
-categories: c-sharp
-description: "This is my implementation of the observer design pattern using c#"
+categories: C#
+description: "This is my implementation of the observer design pattern using C#"
 ---
 # [](#header-1)An example of use of the observer design pattern in c sharp
 
-This is my implementation of the observer design pattern using c#. I created a simple example using an event and a delegate. 
+This is my implementation of the observer design pattern using C#. I created a simple example using an event and a delegate. 
 
 The TicketSeller object (that has the purpose to sell tickets) has an event named OnSale. You can subscribe to this event in order to be notified when the tickets are on sale. 
 
@@ -102,8 +102,8 @@ How to test it? As soon as the status of the tickets goes on sale you will be no
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
 var disqus_config = function () {
-this.page.url = 'https://maciti.github.io/c-sharp/2017/05/20/observer-design-pattern-c-sharp.html';  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = '2017-05-20-observer-design-pattern-c-sharp'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.url = 'https://maciti.github.io/c%23/2017/05/20/observer-design-pattern-c%23.html';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = '2017-05-20-observer-design-pattern-c%23'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 
 (function() { // DON'T EDIT BELOW THIS LINE
