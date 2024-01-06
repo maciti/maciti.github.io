@@ -14,10 +14,10 @@ A simple example of sending multiple requests (in parallel) to a web service, us
 
     List<Request> requests = new List<Request>();
 
-	//represents the batch size of requests sent in parallel
+    //represents the batch size of requests sent in parallel
     int degreeOfParallelism = 3;
 
-    using (var client = new MyClient())
+    using (var client = HttpClientFactory.Create())
     {
         client.Open();
 
@@ -25,7 +25,7 @@ A simple example of sending multiple requests (in parallel) to a web service, us
 
         while (i < requests.Count) {
 
-			//list of task to be run in parallel
+            //list of task to be run in parallel
             var tasks = new List<Task<Response>>();
 
             for(int y = 0; i < degreeOfParallelism; y++){
@@ -35,17 +35,17 @@ A simple example of sending multiple requests (in parallel) to a web service, us
                 if (position >= requests.Count)
                     break;
 
-				//adding task to task list
+                //adding task to task list
                 tasks.Add(new Task<Response>(() => { return client.Send(requests[position]); }));
             }
 
-			//starting all tasks
+            //starting all tasks
             tasks.ForEach(x => x.Start());
 
-			//waiting all tasks to be completed
+            //waiting all tasks to be completed
             Task.WaitAll(tasks.ToArray());
 
-			//collecting/printing the responses received 
+            //collecting/printing the responses received 
             tasks.ForEach(x => Console.WriteLine(x.Result));
 
             i += degreeOfParallelism;
