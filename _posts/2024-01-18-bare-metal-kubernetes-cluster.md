@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 comments: true
 title:  "Bare Metal Kubernetes Cluster"
 date:   2024-01-18 19:55:01 +0100
