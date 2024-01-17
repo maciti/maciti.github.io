@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title:  "Bare Metal Kubernetes Cluster"
-date:   2024-01-18 19:55:01 +0100
+date:   2024-01-17 10:55:01 +0100
 categories: Kubernetes
 description: "I'll be detailing the construction of my 3-node Kubernetes cluster on older hardware within my home lab"
 ---
