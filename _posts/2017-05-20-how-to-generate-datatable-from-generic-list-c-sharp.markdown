@@ -12,37 +12,37 @@ I wanted to add an extension method to a generic list to convert it into a datat
 
 {% highlight csharp %}
 
-    public static DataTable ConvertToDataTable<T>(this List<T> myList)
+public static DataTable ConvertToDataTable<T>(this List<T> myList)
+{
+    DataTable dt = new DataTable();
+
+    var allProperties = typeof(T).GetProperties().ToList();
+
+    //add all the columns
+    allProperties.ForEach(x => dt.Columns.Add(x.Name));
+
+    myList.ForEach(x =>
     {
-        DataTable dt = new DataTable();
+        var row = dt.NewRow();
 
-        var allProperties = typeof(T).GetProperties().ToList();
+        var type = x.GetType();
 
-        //add all the columns
-        allProperties.ForEach(x => dt.Columns.Add(x.Name));
-
-        myList.ForEach(x =>
+        allProperties.ForEach(y =>
         {
-            var row = dt.NewRow();
+            var propValue = type.GetProperty(y.Name).GetValue(x, null);
 
-            var type = x.GetType();
+            //example: if I want to convert a boolean into a BIT
+            ConversionAttr conversionType = y.GetCustomAttributes(typeof(ConversionAttr), false).FirstOrDefault() as ConversionAttr;
 
-            allProperties.ForEach(y =>
-            {
-                var propValue = type.GetProperty(y.Name).GetValue(x, null);
+            row[y.Name] = (propValue != null && conversionType != null) ? Convert.ChangeType(propValue, conversionType.ConversionType) : propValue;
 
-                //example: if I want to convert a boolean into a BIT
-                ConversionAttr conversionType = y.GetCustomAttributes(typeof(ConversionAttr), false).FirstOrDefault() as ConversionAttr;
-
-                row[y.Name] = (propValue != null && conversionType != null) ? Convert.ChangeType(propValue, conversionType.ConversionType) : propValue;
-
-            });
-
-            dt.Rows.Add(row);
         });
 
-         return dt;
-    }
+        dt.Rows.Add(row);
+    });
+
+     return dt;
+}
 
 {% endhighlight %}
 
@@ -52,16 +52,16 @@ You can use a custom attribute for conversion, let's say that for example you wa
 {% highlight csharp %}
 
 
-    public class ConversionAttribute : Attribute
+public class ConversionAttribute : Attribute
+{
+    public Type ConversionType { get; set; }
+
+    public ConversionAttribute(Type type)
     {
-        public Type ConversionType { get; set; }
-
-        public ConversionAttribute(Type type)
-        {
-            this.ConversionType = type;
-        }
-
+        this.ConversionType = type;
     }
+
+}
 
 {% endhighlight %}
 
@@ -94,25 +94,25 @@ I also wrote this simple method that can be useful in case you want to convert a
 
 {% highlight csharp %}
 
-    public static T ConvertToObject<T>(this DataRow dr)
+public static T ConvertToObject<T>(this DataRow dr)
+{
+    var instance = Activator.CreateInstance<T>();
+
+    for (int i = 0; i < dr.Table.Columns.Count; i++)
     {
-        var instance = Activator.CreateInstance<T>();
+        var prop = instance.GetType().GetProperty(dr.Table.Columns[i].ColumnName, BindingFlags.Public | BindingFlags.Instance | BindingFlags.IgnoreCase);
 
-        for (int i = 0; i < dr.Table.Columns.Count; i++)
-        {
-            var prop = instance.GetType().GetProperty(dr.Table.Columns[i].ColumnName, BindingFlags.Public | BindingFlags.Instance | BindingFlags.IgnoreCase);
-
-            if (prop != null)
-                prop.SetValue(instance, Convert.ChangeType(dr[i], prop.PropertyType));
-        }
-
-        return instance;
-
+        if (prop != null)
+            prop.SetValue(instance, Convert.ChangeType(dr[i], prop.PropertyType));
     }
 
-	//...
-	
-	//var test = dataRow.ConvertToObject<Test>();
+    return instance;
+
+}
+
+//...
+
+//var test = dataRow.ConvertToObject<Test>();
 
 {% endhighlight %}
 
@@ -126,7 +126,7 @@ I also wrote this simple method that can be useful in case you want to convert a
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
 var disqus_config = function () {
-this.page.url = 'https://maciti.github.io/c-sharp/2017/05/20/how-to-generate-datatable-from-generic-list-c-sharp.html';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.url = 'https://maciti.github.io/c%23/2017/05/20/how-to-generate-datatable-from-generic-list-c-sharp.html';  // Replace PAGE_URL with your page's canonical URL variable
 this.page.identifier = '2017-05-20-how-to-generate-datatable-from-generic-list-c-sharp'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 
