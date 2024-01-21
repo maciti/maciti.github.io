@@ -67,16 +67,18 @@ then I installed k3s on server 2 and server 3 as <b>agent</b> nodes
 #curl -sfL https://get.k3s.io | K3S_URL=https://192.168.1.13:6443 K3S_TOKEN=mynodetoken sh -
 {% endhighlight %} 
 
-where I replaced <b>mynodetoken</b> with the token saved at /var/lib/rancher/k3s/server/node-token (in the server node (server 1))
+where I replaced <b>mynodetoken</b> with the token saved at <code>/var/lib/rancher/k3s/server/node-token</end> (in the server node (server 1))
 
 <b>PROBLEMS THAT I ENCOUNRED:</b>
+
 PROBLEM 1:
-k3s agent was not connecting to the server node. In server 1, I had to replace server address in both /etc/rancher/k3s/k3s.yaml and ~/.kube/config: from https://127.0.0.1:6443 to https://192.168.1.13 (internal ip address of server 1)
+k3s agent was not connecting to the server node. In server 1, I had to replace server address in both <code>/etc/rancher/k3s/k3s.yaml</code> and <code>~/.kube/config</code> from https://127.0.0.1:6443 to https://192.168.1.13 (internal ip address of server 1)
+
 PROBLEM 2:
 I had a problem with the installation in one of the agents and I had to re-install k3s. After uninstalling and reinstalling it the agent was not in a ready state. 
 ![notready]({{ site.url }}/assets/kubernetes/notready.png)
-Looking at the status of k3s-agent (using systemctl status k3s-agent) I saw the follwing error: <i>Node password rejected, duplicate hostname or contents of '/etc/rancher/node/password' may not match server node-passwd entry</i?>
-I checked all the secrets on server 1 using the following command 
+Looking at the status of k3s-agent <code>systemctl status k3s-agent</code> I saw the follwing error: <i>Node password rejected, duplicate hostname or contents of '/etc/rancher/node/password' may not match server node-passwd entry</i>
+I checked all the secrets on server 1 using the following command:
 {% highlight console  %}
 kubectl get -n kube-system secrets 
 {% endhighlight %} 
@@ -101,6 +103,31 @@ AND FINALLY I COULD SEE ALL THE NODES IN READY STATE FROM SERVER 1!!!
 ![allready]({{ site.url }}/assets/kubernetes/allready.jpg)
 
 ![tobecontinued]({{ site.url }}/assets/tobecontinued.jpg)
+
+{% if page.comments %}
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = 'https://maciti.github.io/kubernetes/2024/01/17/bare-metal-kubernetes-cluster.html';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = '2022-01-17-bare-metal-kubernetes-cluster'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://maciti-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+{% endif %}
 
 
 
