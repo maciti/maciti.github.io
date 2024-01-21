@@ -15,12 +15,12 @@
   </head>
   <body>
 
-      <header style="padding:0">
+      <header>
         <h1>{{ site.title | default: site.github.repository_name }}</h1>
         <p>{{ site.description | default: site.github.project_tagline }}</p>
       </header>
 
-      <div id="banner" style="top:70px;">
+      <div id="banner">
         <span id="logo"></span>
         <!-- <a href="https://maciti.github.io" class="button fork"><strong>Home</strong></a> -->
           <div class="downloads">
@@ -33,10 +33,10 @@
       </div><!-- end banner -->
 
     <div class="wrapper">
-      <nav style="top:130px">
+      <nav>
         <ul></ul>
       </nav>
-      <section style="margin-top:130px">
+      <section>
         {{ content }}
 
       </section>
