@@ -78,7 +78,9 @@ PROBLEM 2:
 I had a problem with the installation in one of the agents and I had to re-install k3s. After uninstalling and reinstalling it the agent was not in a ready state. 
 ![notready]({{ site.url }}/assets/kubernetes/notready.png)
 Looking at the status of k3s-agent <code>systemctl status k3s-agent</code> I saw the follwing error: <i>Node password rejected, duplicate hostname or contents of '/etc/rancher/node/password' may not match server node-passwd entry</i>
+
 I checked all the secrets on server 1 using the following command:
+
 {% highlight console  %}
 kubectl get -n kube-system secrets 
 {% endhighlight %} 
@@ -98,7 +100,7 @@ I solved it by deleting the server2.node-password
 kubectl -n kube-system delete secrets homenas-vm.node-password.k3s
 {% endhighlight %} 
 
-AND FINALLY I COULD SEE ALL THE NODES IN READY STATE FROM SERVER 1!!!
+I restarted the k3s-agent...and FINALLY I COULD SEE ALL THE NODES IN READY STATE FROM SERVER 1!!!
 
 ![allready]({{ site.url }}/assets/kubernetes/allready.jpg)
 
